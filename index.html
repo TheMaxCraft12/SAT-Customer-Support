@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>S.A.T. Productions | Support Center</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+--bg:#050a0f;
+--panel:#0c1720;
+--cyan:#00d9ff;
+--text:#e0f7ff;
+--muted:#829eac;
+--border:#153b49;
+}
+
+*{box-sizing:border-box}
+
+body{
+margin:0;
+background:var(--bg);
+color:var(--text);
+font-family:Rajdhani,sans-serif;
+}
+
+header{
+padding:20px 6%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#07121a;
+border-bottom:1px solid var(--border);
+}
+
+.logo{
+font-family:Orbitron;
+color:var(--cyan);
+font-size:23px;
+font-weight:800;
+letter-spacing:3px;
+}
+
+.logo small{
+display:block;
+font-size:9px;
+letter-spacing:4px;
+color:var(--muted);
+}
+
+nav{display:flex;gap:20px}
+
+nav a{
+color:var(--muted);
+text-decoration:none;
+}
+
+nav a:hover{color:var(--cyan)}
+
+.hero{
+padding:85px 20px;
+text-align:center;
+background:
+linear-gradient(#07121ae8,#050a0f),
+repeating-linear-gradient(0deg,transparent 0 39px,#12313c 40px),
+repeating-linear-gradient(90deg,transparent 0 39px,#12313c 40px);
+}
+
+.hero h1{
+font-family:Orbitron;
+font-size:clamp(28px,5vw,48px);
+}
+
+.hero h1 span{color:var(--cyan)}
+
+.hero p{color:var(--muted);font-size:19px}
+
+.online{
+color:#00e69a;
+border:1px solid #00e69a;
+display:inline-block;
+padding:8px 18px;
+margin-top:15px;
+letter-spacing:2px;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+}
+
+.heading{
+color:var(--cyan);
+font-family:Orbitron;
+font-size:19px;
+margin-bottom:22px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:20px;
+}
+
+.card{
+background:var(--panel);
+border:1px solid var(--border);
+padding:25px;
+transition:.2s;
+}
+
+.card:hover{
+border-color:var(--cyan);
+transform:translateY(-4px);
+}
+
+.symbol{font-size:35px;color:var(--cyan)}
+
+.card h3{font-family:Orbitron;font-size:15px}
+.card p{color:var(--muted)}
+
+button{
+border:1px solid var(--cyan);
+background:transparent;
+color:var(--cyan);
+padding:12px 18px;
+font-family:Orbitron;
+cursor:pointer;
+}
+
+button:hover{background:var(--cyan);color:#001018}
+
+.primary{background:var(--cyan);color:#001018}
+
+.status{
+display:inline-block;
+padding:5px 12px;
+border:1px solid #00d58c;
+color:#00d58c;
+font-size:13px;
+}
+
+.panel{
+background:var(--panel);
+border:1px solid var(--border);
+padding:25px;
+margin-top:25px;
+}
+
+.faq{border-bottom:1px solid var(--border);padding:15px 0}
+.faq strong{color:var(--cyan);cursor:pointer}
+.answer{display:none;color:var(--muted)}
+
+footer{
+border-top:1px solid var(--border);
+text-align:center;
+padding:30px;
+color:var(--muted);
+letter-spacing:2px;
+margin-top:50px;
+}
+
+@media(max-width:600px){
+header{padding:15px}
+nav{gap:10px}
+nav a{font-size:13px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">
+S.A.T.
+<small>PRODUCTIONS</small>
+</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#support">Support</a>
+<a href="#faq">FAQ</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<p>SECURE SUPPORT NETWORK</p>
+<h1>S.A.T. <span>SUPPORT</span> CENTER</h1>
+<p>Official Customer Support of S.A.T. Productions.</p>
+<div class="online">● SYSTEM ONLINE</div>
+</section>
+
+<main class="container">
+
+<div class="heading" id="support">/ SUPPORT SERVICES</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="symbol">▣</div>
+<h3>TECHNICAL SUPPORT</h3>
+<p>Technical problems with our games?</p>
+<button onclick="openTicket()">OPEN TICKET</button>
+</div>
+
+<div class="card">
+<div class="symbol">⚠</div>
+<h3>BUG REPORT</h3>
+<p>Found a bug? Report it to our developers.</p>
+<button onclick="openBug()">REPORT BUG</button>
+</div>
+
+<div class="card">
+<div class="symbol">◈</div>
+<h3>GENERAL INQUIRY</h3>
+<p>Questions, feedback or suggestions?</p>
+<button onclick="openTicket()">CONTACT US</button>
+</div>
+
+</div>
+
+<div class="panel">
+<div class="heading">/ GITHUB TICKET SYSTEM</div>
+<p>All support requests are managed through the official S.A.T. Productions GitHub repository.</p>
+<p class="status">● GITHUB ISSUE SYSTEM</p>
+<br>
+<button class="primary" onclick="openTickets()">VIEW ALL TICKETS</button>
+</div>
+
+<section id="faq">
+<div class="heading">/ FREQUENTLY ASKED QUESTIONS</div>
+
+<div class="panel">
+
+<div class="faq">
+<strong onclick="toggle(this)">What is S.A.T. Productions?</strong>
+<p class="answer">S.A.T. Productions is an independent creative game development studio.</p>
+</div>
+
+<div class="faq">
+<strong onclick="toggle(this)">How do I report a bug?</strong>
+<p class="answer">Select Bug Report and submit a ticket through GitHub.</p>
+</div>
+
+<div class="faq">
+<strong onclick="toggle(this)">How can I check my ticket?</strong>
+<p class="answer">Visit the GitHub Issues page to see the current status.</p>
+</div>
+
+</div>
+</section>
+
+</main>
+
+<footer>
+S.A.T. PRODUCTIONS © 2026
+<br><br>
+SECURE NETWORK // AUTHORIZED ACCESS ONLY
+</footer>
+
+<script>
+const GITHUB_REPO = "themaxcraft12/SAT-Customer-Support";
+
+function openTickets(){
+window.open(
+`https://github.com/${GITHUB_REPO}/issues`,
+"_blank"
+);
+}
+
+function openTicket(){
+window.open(
+`https://github.com/${GITHUB_REPO}/issues/new/choose`,
+"_blank"
+);
+}
+
+function openBug(){
+window.open(
+`https://github.com/${GITHUB_REPO}/issues/new?template=bug_report.yml`,
+"_blank"
+);
+}
+
+function toggle(element){
+const answer=element.nextElementSibling;
+answer.style.display=
+answer.style.display==="block"?"none":"block";
+}
+</script>
+
+</body>
+  </html>
+  
