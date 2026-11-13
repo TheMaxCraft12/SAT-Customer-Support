@@ -1,0 +1,43 @@
+
+name: Support Request
+description: Contact S.A.T. Productions support.
+title: "[SUPPORT] "
+labels: ["support"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## S.A.T. Productions Support
+        Please describe your request.
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Technical Support
+        - General Question
+        - Game Feedback
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: project
+    attributes:
+      label: Project
+      options:
+        - S.A.T. The Game
+        - S.A.T. Secrets of Woodlane
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      placeholder: How can we help you?
+    validations:
+      required: true
+      
